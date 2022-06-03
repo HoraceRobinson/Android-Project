@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     TextView textView2;
     EditText editText;
     XUIPopup myPopup;
-    Boolean flag;
     View currentView;
 
     @Override
@@ -33,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         textView2 = findViewById(R.id.textView2);
         editText = findViewById(R.id.input);
         myPopup = new XUIPopup(this);
-        flag = true;
     }
 
     public void fight(View view) {
@@ -59,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        从ROOM查找数据，找不到就用空星，找到就用实星
         window.setExplanation("啦啦啦");
-        if (flag) {
+        if (true) {
             window.setButtonBackground(true);
         } else {
             window.setButtonBackground(false);
@@ -73,10 +71,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void collect(View view) {
 
-        flag = false;
+//        根据currentView向ROOM数据库查询是否存在该成语
+//        存在则移除，不存在则添加
+
         if (myPopup.isShowing()) {
+
             myPopup.dismiss();
-            popup(currentView);
         }
 
     }
