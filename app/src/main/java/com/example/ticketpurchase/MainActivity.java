@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.ticketpurchase.room.DBEngine;
 import com.xuexiang.xui.widget.popupwindow.popup.XUIPopup;
 
 import org.jetbrains.annotations.TestOnly;
@@ -20,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
     TextView textView1;
     TextView textView2;
     EditText editText;
-    XUIPopup myPopup;
-    View currentView;
+    public XUIPopup myPopup;
+    DBEngine dbEngine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         textView2 = findViewById(R.id.textView2);
         editText = findViewById(R.id.input);
         myPopup = new XUIPopup(this);
+        dbEngine = new DBEngine(this);
     }
 
     public void fight(View view) {
@@ -47,36 +49,32 @@ public class MainActivity extends AppCompatActivity {
 
     public void popup(View view) {
 
-        MyPopupWindow window = new MyPopupWindow(this);
-        if (view.equals(textView1)) {
-            window.setIdiom((String) textView1.getText());
-        }
-        else {
-            window.setIdiom((String) textView2.getText());
-        }
-
-//        从ROOM查找数据，找不到就用空星，找到就用实星
-        window.setExplanation("啦啦啦");
-        if (true) {
-            window.setButtonBackground(true);
-        } else {
-            window.setButtonBackground(false);
-        }
-        myPopup.setContentView(window);
-        myPopup.setAnimStyle(XUIPopup.ANIM_GROW_FROM_CENTER);
-        myPopup.setPreferredDirection(XUIPopup.DIRECTION_TOP);
-        myPopup.show(view);
-        currentView = view;
+//        MyPopupWindow window = new MyPopupWindow(this);
+//        String idiom = (String) textView1.getText();
+//        window.setIdiom(idiom);
+//        dbEngine.getTheIdiom();
+//        window.setExplanation("啦啦啦");
+//        if (true) {
+//            window.setButtonBackground(true);
+//        } else {
+//            window.setButtonBackground(false);
+//        }
+//        myPopup.setContentView(window);
+//        myPopup.setAnimStyle(XUIPopup.ANIM_GROW_FROM_CENTER);
+//        myPopup.setPreferredDirection(XUIPopup.DIRECTION_TOP);
+//        myPopup.show(view);
+//        currentView = view;
+        dbEngine.popupIdiom((String) textView1.getText(), this);
     }
 
     public void collect(View view) {
 
-//        根据currentView向ROOM数据库查询是否存在该成语
 //        存在则移除，不存在则添加
 
         if (myPopup.isShowing()) {
 
             myPopup.dismiss();
+            dbEngine.collectIdiom((String) textView1.getText(),this);
         }
 
     }
