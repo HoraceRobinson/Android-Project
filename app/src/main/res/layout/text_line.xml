@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white_background"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/grid_text"
+        android:text="语"
+        android:fontFamily="@font/stxingka"
+        android:textSize="35sp"
+        android:textColor="@color/xui_config_color_red"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/grid_text"
+        android:text="语"
+        android:fontFamily="@font/stxingka"
+        android:textSize="35sp"
+        android:textColor="@color/xui_config_color_red"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/grid_text"
+        android:text="语"
+        android:fontFamily="@font/stxingka"
+        android:textSize="35sp"
+        android:textColor="@color/xui_config_color_red"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/grid_text"
+        android:text="语"
+        android:fontFamily="@font/stxingka"
+        android:textSize="35sp"
+        android:textColor="@color/xui_config_color_red"
+        android:gravity="center"/>
+</LinearLayout>

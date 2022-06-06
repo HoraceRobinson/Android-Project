@@ -10,4 +10,6 @@
     <color name="gray">#9E9E96</color>
     <color name="brown">#8A6463</color>
     <color name="classic_gray">#87939A</color>
+    <color name="rou">#DDDDCC</color>
+    <color name="theme_white">#F7F7EF</color>
 </resources>

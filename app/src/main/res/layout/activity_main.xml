@@ -1,24 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/theme_white"
+    tools:context=".HomeActivity">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
+
+    <FrameLayout
+        android:id="@+id/frameContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?actionBarSize"
-        android:layout_marginBottom="?actionBarSize"
-        android:overScrollMode="never" />
+        android:layout_height="match_parent">
+
+<!--        <com.google.android.material.appbar.AppBarLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:theme="@style/AppTheme.AppBarOverlay">-->
+
+<!--            <androidx.appcompat.widget.Toolbar-->
+<!--                style="@style/AppTheme.PopupOverlay"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:title="橙语"-->
+<!--                app:logo="@drawable/ic_orange"-->
+<!--                app:titleTextColor="@color/rou" />-->
+
+<!--        </com.google.android.material.appbar.AppBarLayout>-->
+    </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+        android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:layout_gravity="bottom"
-        android:background="@color/xui_config_color_white"
-        app:labelVisibilityMode="labeled"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/rou"
         app:menu="@menu/menu_navigation_bottom" />
 
-</FrameLayout>
+    <!--    <androidx.core.widget.NestedScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent">-->
+    <!--        <SearchView-->
+    <!--            android:id="@+id/searchView"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:iconifiedByDefault="false"-->
+    <!--            android:queryHint="请输入搜索内容" />-->
+    <!--    </androidx.core.widget.NestedScrollView>-->
+
+</RelativeLayout>

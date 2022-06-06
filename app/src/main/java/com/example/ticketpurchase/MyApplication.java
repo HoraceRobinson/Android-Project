@@ -10,5 +10,7 @@ public class MyApplication extends Application {
         super.onCreate();
         XUI.init(this);
         XUI.debug(true);
+        //设置默认字体为华文行楷，这里写你的字体库
+//        XUI.initFontStyle("fonts/simfang.ttf");
     }
 }
