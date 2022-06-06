@@ -9,19 +9,19 @@ import android.widget.TextView;
 public class MyPopupWindow extends LinearLayout {
 
     private Button collect;
-    private TextView idiom;
+    private TextView idiom_text;
     private TextView explanation;
 
     public MyPopupWindow(Context context) {
         super(context);
         LayoutInflater.from(context).inflate(R.layout.popup_window,this);
         collect = findViewById(R.id.collect);
-        idiom = findViewById(R.id.idiom);
+        idiom_text = findViewById(R.id.idiom_text);
         explanation = findViewById(R.id.explanation);
     }
 
     public void setIdiom(String idiom) {
-        this.idiom.setText(idiom);
+        this.idiom_text.setText(idiom);
     }
 
     public void setExplanation(String explanation) {

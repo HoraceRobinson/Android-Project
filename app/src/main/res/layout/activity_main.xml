@@ -47,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:onClick="fight"/>
+        android:onClick="chain"/>
 
     <com.xuexiang.xui.widget.edittext.ValidatorEditText
         style="@style/EditText.Normal"
@@ -57,8 +57,5 @@
         android:singleLine="true"
         app:vet_tipPosition="top"
         tools:ignore="MissingConstraints" />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

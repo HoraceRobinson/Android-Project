@@ -34,7 +34,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         MyViewHolder holder = new MyViewHolder(view);
         holder.idiom.setOnClickListener(v -> {
             Intent intent = new Intent(context, IdiomContentActivity.class);
-            intent.putExtra("content", holder.idiom.getText());
+            intent.putExtra("idiom_text", holder.idiom.getText());
             context.startActivity(intent);
         });
         holder.button.setOnClickListener(v -> {

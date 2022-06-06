@@ -31,19 +31,15 @@ public class CollectedIdiomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_collect);
-
-//        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        recyclerView.setAdapter(new MyAdapter(idioms,this));
         dbEngine = new DBEngine(this);
         dbEngine.getAllIdioms(this);
     }
 
 
     public void add(View view) {
-        Idiom idiom1 = new Idiom("一夫当关","yifudangguan","一个人在关");
-        Idiom idiom2 = new Idiom("万夫莫开","wanfumokai","万个人卜凯");
-        Idiom idiom3 = new Idiom("杀人如麻","sharenruma","杀人像嘛");
+        Idiom idiom1 = new Idiom("一夫当关","yifudangguan","一个人在关","出处","例句");
+        Idiom idiom2 = new Idiom("万夫莫开","wanfumokai","万个人卜凯","出处","例句");
+        Idiom idiom3 = new Idiom("杀人如麻","sharenruma","杀人像嘛","出处","例句");
         dbEngine.insertIdioms(idiom1,idiom2,idiom3);
     }
 }

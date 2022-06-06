@@ -5,8 +5,29 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/content"
+        android:id="@+id/idiom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/pinyin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/meaning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/reference"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/example"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 
 </LinearLayout>

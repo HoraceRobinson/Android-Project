@@ -228,8 +228,16 @@ public class DBEngine {
                 Log.e("IdiomContentActivity","Activity弱引用创建失败或Activity已经结束");
             }
             else {
-                TextView textView = activity.findViewById(R.id.content);
-                textView.setText(idiom.getMeaning());
+                TextView textView1 = activity.findViewById(R.id.idiom);
+                textView1.setText(idiom.getIdiom());
+                TextView textView2 = activity.findViewById(R.id.pinyin);
+                textView2.setText(idiom.getPinyin());
+                TextView textView3 = activity.findViewById(R.id.meaning);
+                textView3.setText(idiom.getMeaning());
+                TextView textView4 = activity.findViewById(R.id.reference);
+                textView4.setText(idiom.getReference());
+                TextView textView5 = activity.findViewById(R.id.example);
+                textView5.setText(idiom.getExample());
             }
         }
     }
