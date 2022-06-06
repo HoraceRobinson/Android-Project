@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/drawable-v24/icon_arrow_right_grey.xml" value="0.1725" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/drawable/grid_text.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/drawable/ic_arrow_left.xml" value="0.1475" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/drawable/ic_baseline_create_24.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1375" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/drawable/ic_baseline_info_24.xml" value="0.1165" />
@@ -16,8 +17,11 @@
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/drawable/ic_baseline_textsms_24.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/drawable/ic_baseline_update_24.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/drawable/ic_dictionary.xml" value="0.231" />
+        <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/drawable/ic_front.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/drawable/ic_orange.xml" value="0.231" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/drawable/ic_search.xml" value="0.231" />
+        <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/drawable/ic_star.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/drawable/ic_star_fill.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/drawable/ic_user.xml" value="0.231" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/drawable/linear_background.xml" value="0.168" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/drawable/search_view.xml" value="0.231" />
@@ -27,11 +31,17 @@
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/layout/activity_info.xml" value="0.4" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/layout/activity_user.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/layout/button_list.xml" value="0.20820863616930313" />
+        <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/layout/explain_text.xml" value="0.20820863616930313" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/layout/fragement_home.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/layout/fragement_user.xml" value="0.20820863616930313" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/layout/fragment_game.xml" value="0.20820863616930313" />
+        <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/layout/fragment_idiom.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/layout/fragment_pattern.xml" value="0.20820863616930313" />
+        <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/layout/fragment_star_idiom.xml" value="0.20820863616930313" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/layout/home_fragment.xml" value="0.20820863616930313" />
+        <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/layout/pinyin_text.xml" value="0.20820863616930313" />
+        <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/layout/recycle_idiom_item.xml" value="0.20820863616930313" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/layout/text_line.xml" value="0.20820863616930313" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/menu/menu_navigation_bottom.xml" value="0.20820863616930313" />
       </map>

@@ -3,6 +3,7 @@ package com.example.ticketpurchase;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -84,16 +85,16 @@ public class GameFragment extends Fragment {
         tabList[2] = "义";
         tabList[3] = "游";
         fragments[0] = PatternFragment.newInstance();
-        fragments[1] = PatternFragment.newInstance();
-        fragments[2] = PatternFragment.newInstance();
+        fragments[1] = IdiomFragment.newInstance();
+        fragments[2] = StarIdiomFragment.newInstance();
         fragments[3] = PatternFragment.newInstance();
         MyAdapter myAdapter = new MyAdapter(getChildFragmentManager());
         viewPager.setAdapter(myAdapter);
+
         tabLayout.setupWithViewPager(viewPager);
     }
 
     class MyAdapter extends FragmentPagerAdapter {
-
 
         public MyAdapter(FragmentManager fragmentManager){
             super(fragmentManager);
@@ -107,6 +108,12 @@ public class GameFragment extends Fragment {
         @Override
         public int getCount() {
             return fragments.length;
+        }
+
+        @Nullable
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return tabList[position];
         }
     }
 }

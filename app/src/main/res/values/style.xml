@@ -39,4 +39,9 @@
         <item name="riv_is_circle">true</item>
         <item name="riv_border_width">0dp</item>
     </style>
+
+    <style name="tabText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">18sp</item>
+    </style>
+
 </resources>

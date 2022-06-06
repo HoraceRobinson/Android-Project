@@ -59,12 +59,20 @@
             android:textStyle="bold"
             android:text="每日一词"/>
 
-        <include layout="@layout/text_line"
-            android:layout_height="80dp"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"/>
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_background"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp">
+            <include layout="@layout/text_line"
+                android:layout_height="80dp"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"/>
+        </LinearLayout>
+
     </LinearLayout>
 
     <com.xuexiang.xui.widget.banner.widget.banner.SimpleImageBanner

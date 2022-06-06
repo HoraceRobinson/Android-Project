@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/villege_ink"
+    tools:context=".IdiomFragment">
+
+
+<!--    <com.xuexiang.xui.widget.actionbar.TitleBar-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        app:tb_barHeight="60dp"-->
+<!--        app:tb_immersive="true"-->
+<!--        app:tb_leftImageResource="@drawable/ic_arrow_left"-->
+<!--        app:tb_useThemeColor="false"-->
+<!--        />-->
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/xui_actionbar_height"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp">
+            <com.xuexiang.xui.widget.alpha.XUIAlphaImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_arrow_left"
+                />
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+
+            <com.xuexiang.xui.widget.alpha.XUIAlphaImageView
+                android:id="@+id/front"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@+id/star"
+                android:src="@drawable/ic_front" />
+
+            <com.xuexiang.xui.widget.alpha.XUIAlphaImageView
+                android:id="@+id/star"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_star" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <include layout="@layout/text_line"
+        android:layout_height="100dp"
+        android:layout_width="match_parent"/>
+
+    <include layout="@layout/pinyin_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <include layout="@layout/explain_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"/>
+</LinearLayout>

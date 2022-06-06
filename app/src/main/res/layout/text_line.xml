@@ -2,18 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/white_background"
+    android:layout_height="wrap_content"
+
     android:gravity="center">
 
     <TextView
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/grid_text"
-        android:text="语"
-        android:fontFamily="@font/stxingka"
+        android:text="成"
+        android:fontFamily="@font/stxinwei"
         android:textSize="35sp"
-        android:textColor="@color/xui_config_color_red"
+        android:textColor="@color/font_black"
+        android:textStyle="bold"
         android:gravity="center"/>
 
     <TextView
@@ -22,9 +23,10 @@
         android:layout_marginStart="20dp"
         android:background="@drawable/grid_text"
         android:text="语"
-        android:fontFamily="@font/stxingka"
+        android:fontFamily="@font/stxinwei"
         android:textSize="35sp"
-        android:textColor="@color/xui_config_color_red"
+        android:textColor="@color/font_black"
+        android:textStyle="bold"
         android:gravity="center"/>
 
     <TextView
@@ -32,19 +34,21 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:background="@drawable/grid_text"
-        android:text="语"
-        android:fontFamily="@font/stxingka"
+        android:text="接"
+        android:fontFamily="@font/stxinwei"
         android:textSize="35sp"
-        android:textColor="@color/xui_config_color_red"
+        android:textColor="@color/font_black"
+        android:textStyle="bold"
         android:gravity="center"/>
     <TextView
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:background="@drawable/grid_text"
-        android:text="语"
-        android:fontFamily="@font/stxingka"
+        android:text="龙"
+        android:fontFamily="@font/stxinwei"
         android:textSize="35sp"
-        android:textColor="@color/xui_config_color_red"
+        android:textColor="@color/font_black"
+        android:textStyle="bold"
         android:gravity="center"/>
 </LinearLayout>
