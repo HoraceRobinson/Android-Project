@@ -13,7 +13,6 @@
         android:layout_marginHorizontal="20dp"
         android:textColor="@color/black"
         android:textSize="18dp"
-        android:text="点击"
         android:background="@drawable/white_background"/>
 
     <Button

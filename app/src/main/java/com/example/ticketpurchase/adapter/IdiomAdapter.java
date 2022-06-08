@@ -1,14 +1,19 @@
 package com.example.ticketpurchase.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ticketpurchase.IdiomActivity;
+import com.example.ticketpurchase.IdiomFragment;
 import com.example.ticketpurchase.R;
 
 import org.json.JSONArray;
@@ -31,12 +36,14 @@ public class IdiomAdapter extends RecyclerView.Adapter<IdiomAdapter.ViewHolder>{
         private TextView content;
         private TextView pinyin;
         private TextView shiyi;
+        private LinearLayout linearLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             content = itemView.findViewById(R.id.idiom_content);
             pinyin = itemView.findViewById(R.id.pinyin);
             shiyi = itemView.findViewById(R.id.shiyi);
+            linearLayout = itemView.findViewById(R.id.linear_cont);
         }
 
         public TextView getContent() {
@@ -49,6 +56,10 @@ public class IdiomAdapter extends RecyclerView.Adapter<IdiomAdapter.ViewHolder>{
 
         public TextView getShiyi() {
             return shiyi;
+        }
+
+        public LinearLayout getLinearLayout() {
+            return linearLayout;
         }
     }
 
@@ -70,6 +81,12 @@ public class IdiomAdapter extends RecyclerView.Adapter<IdiomAdapter.ViewHolder>{
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        holder.getLinearLayout().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context, IdiomActivity.class));
+            }
+        });
     }
 
     @Override

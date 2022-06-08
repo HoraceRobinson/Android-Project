@@ -85,7 +85,7 @@ public class GameFragment extends Fragment {
         tabList[2] = "义";
         tabList[3] = "游";
         fragments[0] = PatternFragment.newInstance();
-        fragments[1] = IdiomFragment.newInstance();
+        fragments[1] = PronunceFragment.newInstance();
         fragments[2] = StarIdiomFragment.newInstance();
         fragments[3] = PatternFragment.newInstance();
         MyAdapter myAdapter = new MyAdapter(getChildFragmentManager());
