@@ -73,10 +73,10 @@ public class ChainActivity extends AppCompatActivity {
         animation1.setDuration(2000);
         animation1.start();
         //用异步任务查询数据库中前缀为input的后缀的成语
-        textView1.setText("万");
-        textView2.setText("夫");
-        textView3.setText("莫");
-        textView4.setText("开");
+        textView1.setText("拔");
+        textView2.setText("苗");
+        textView3.setText("助");
+        textView4.setText("长");
     }
 
     public void popup(View view) {
