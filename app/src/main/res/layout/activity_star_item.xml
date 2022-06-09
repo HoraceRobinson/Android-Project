@@ -32,14 +32,14 @@
                 android:textSize="20sp" />
 
 
-            <com.xuexiang.xui.widget.alpha.XUIAlphaImageView
-                android:id="@+id/star"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
+<!--            <com.xuexiang.xui.widget.alpha.XUIAlphaImageView-->
+<!--                android:id="@+id/star"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_alignParentEnd="true"-->
 
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_star" />
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:src="@drawable/ic_star" />-->
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 

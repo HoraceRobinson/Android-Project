@@ -9,8 +9,6 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import io.github.inflationx.viewpump.ViewPumpContextWrapper;
-
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
@@ -36,8 +34,12 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.user:
                         fragment = new UserFragement();
                         break;
+                    case R.id.function:
+                        fragment = new FunctionFragment();
+                        break;
                     case R.id.game:
                         fragment = new GameFragment();
+                        break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameContainer, fragment).commit();
                 return true;

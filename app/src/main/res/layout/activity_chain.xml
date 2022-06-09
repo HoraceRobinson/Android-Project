@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/theme_white"
+    tools:context=".ChainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/xui_actionbar_height"
+        android:background="@color/brown"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp">
+            <com.xuexiang.xui.widget.alpha.XUIAlphaImageView
+                android:id="@+id/back_func"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_arrow_left"
+                />
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:singleLine="true"
+                android:textColor="@color/rou"
+                android:text="成语接龙"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="8"
+        android:gravity="center">
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="popup"
+            android:layout_marginBottom="90dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/grid_text"
+                android:text="一"
+                android:fontFamily="@font/stxinwei"
+                android:textSize="35sp"
+                android:textColor="@color/font_black"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/grid_text"
+                android:text="夫"
+                android:fontFamily="@font/stxinwei"
+                android:textSize="35sp"
+                android:textColor="@color/font_black"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/grid_text"
+                android:text="当"
+                android:fontFamily="@font/stxinwei"
+                android:textSize="35sp"
+                android:textColor="@color/font_black"
+                android:textStyle="bold"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/grid_text"
+                android:text="关"
+                android:fontFamily="@font/stxinwei"
+                android:textSize="35sp"
+                android:textColor="@color/font_black"
+                android:textStyle="bold"
+                android:gravity="center"/>
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@drawable/custom_line" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout2"
+            android:layout_marginTop="90dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/text5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/grid_text"
+                android:text=""
+                android:fontFamily="@font/stxinwei"
+                android:textSize="35sp"
+                android:textColor="@color/font_black"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/text6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/grid_text"
+                android:text=""
+                android:fontFamily="@font/stxinwei"
+                android:textSize="35sp"
+                android:textColor="@color/font_black"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/text7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/grid_text"
+                android:text=""
+                android:fontFamily="@font/stxinwei"
+                android:textSize="35sp"
+                android:textColor="@color/font_black"
+                android:textStyle="bold"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/text8"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/grid_text"
+                android:text=""
+                android:fontFamily="@font/stxinwei"
+                android:textSize="35sp"
+                android:textColor="@color/font_black"
+                android:textStyle="bold"
+                android:gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="1"
+        >
+
+
+        <com.xuexiang.xui.widget.edittext.ValidatorEditText
+            style="@style/EditText.Normal"
+            android:id="@+id/input"
+            android:layout_width="300dp"
+            android:background="@drawable/border_edittext"
+            android:singleLine="true"
+            android:layout_gravity="center"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:text="接龙"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:onClick="chain"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

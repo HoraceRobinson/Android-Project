@@ -5,9 +5,15 @@
         android:title="首页"
         android:icon="@drawable/ic_baseline_home_24"/>
     <item
-        android:id="@+id/game"
+        android:id="@+id/function"
         android:title="橙语"
         android:icon="@drawable/ic_dictionary"/>
+
+    <item
+        android:id="@+id/game"
+        android:title="趣橙"
+        android:icon="@drawable/ic_baseline_games_24"/>
+
     <item
         android:id="@+id/user"
         android:title="我的"

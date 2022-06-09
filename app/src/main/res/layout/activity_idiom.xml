@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/villege_ink"
-    tools:context=".IdiomFragment">
+    tools:context=".IdiomActivity">
 
 
     <!--    <com.xuexiang.xui.widget.actionbar.TitleBar-->
@@ -69,6 +69,18 @@
         android:layout_height="wrap_content"/>
 
     <include layout="@layout/explain_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"/>
+
+    <include layout="@layout/reference_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"/>
+
+    <include layout="@layout/example_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"

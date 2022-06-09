@@ -7,10 +7,11 @@
     android:gravity="center">
 
     <TextView
+        android:id="@+id/text1"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/grid_text"
-        android:text="成"
+        android:text="一"
         android:fontFamily="@font/stxinwei"
         android:textSize="35sp"
         android:textColor="@color/font_black"
@@ -18,11 +19,12 @@
         android:gravity="center"/>
 
     <TextView
+        android:id="@+id/text2"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:background="@drawable/grid_text"
-        android:text="语"
+        android:text="夫"
         android:fontFamily="@font/stxinwei"
         android:textSize="35sp"
         android:textColor="@color/font_black"
@@ -30,22 +32,24 @@
         android:gravity="center"/>
 
     <TextView
+        android:id="@+id/text3"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:background="@drawable/grid_text"
-        android:text="接"
+        android:text="当"
         android:fontFamily="@font/stxinwei"
         android:textSize="35sp"
         android:textColor="@color/font_black"
         android:textStyle="bold"
         android:gravity="center"/>
     <TextView
+        android:id="@+id/text4"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:background="@drawable/grid_text"
-        android:text="龙"
+        android:text="关"
         android:fontFamily="@font/stxinwei"
         android:textSize="35sp"
         android:textColor="@color/font_black"

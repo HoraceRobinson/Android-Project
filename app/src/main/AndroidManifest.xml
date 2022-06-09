@@ -13,16 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TicketPurchase">
         <activity
+            android:name=".ChainActivity"
+            android:exported="false" />
+        <activity
             android:name=".IdiomActivity"
             android:exported="false" />
         <activity
             android:name=".StarItemActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".InfoActivity"
             android:exported="false" />
         <activity
             android:name=".UserActivity"

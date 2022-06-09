@@ -9,10 +9,10 @@
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:text="释义"/>
+        android:text="例句"/>
 
     <TextView
-        android:id="@+id/meaning"
+        android:id="@+id/example"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/white_background"

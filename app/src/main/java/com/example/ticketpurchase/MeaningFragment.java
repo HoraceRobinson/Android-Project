@@ -13,18 +13,18 @@ import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link PronunceFragment#newInstance} factory method to
+ * Use the {@link MeaningFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PronunceFragment extends Fragment {
+public class MeaningFragment extends Fragment {
 
 
-    public PronunceFragment() {
+    public MeaningFragment() {
         // Required empty public constructor
     }
 
-    public static PronunceFragment newInstance() {
-        PronunceFragment fragment = new PronunceFragment();
+    public static MeaningFragment newInstance() {
+        MeaningFragment fragment = new MeaningFragment();
         return fragment;
     }
 
@@ -37,7 +37,7 @@ public class PronunceFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_pronunce, container, false);
+        View view = inflater.inflate(R.layout.fragment_meaning, container, false);
         TextView textView1 = view.findViewById(R.id.text1);
         TextView textView2 = view.findViewById(R.id.text2);
         TextView textView3 = view.findViewById(R.id.text3);
@@ -51,15 +51,15 @@ public class PronunceFragment extends Fragment {
         TextView textView = view.findViewById(R.id.text_explain);
         LinearLayout linearLayout = view.findViewById(R.id.next_btn);
 
-        textView1.setText("差");
-        textView2.setText("强");
-        textView3.setText("人");
-        textView4.setText("意");
+        textView1.setText("高");
+        textView2.setText("山");
+        textView3.setText("流");
+        textView4.setText("水");
 
-        btn1.setText("[ chā qiáng rén yì ]");
-        btn2.setText("[ chà qiáng rén yì ]");
-        btn3.setText("[ chà qiǎng rén yì ]");
-        btn4.setText("[ chā qiǎng rén yì ]");
+        btn1.setText("比喻人生知音难遇，也指乐曲弹奏非常绝妙");
+        btn2.setText("描述自然现象");
+        btn3.setText("形容事物自然流畅");
+        btn4.setText("形容朋友之间十分默契");
 
         btn1.setOnClickListener(view14 -> {
             btn1.setBackground(getResources().getDrawable(R.drawable.background_green));
@@ -96,14 +96,14 @@ public class PronunceFragment extends Fragment {
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textView1.setText("度");
-                textView2.setText("德");
-                textView3.setText("量");
-                textView4.setText("力");
-                btn1.setText("[ duó dé liàng lì ]");
-                btn2.setText("[ dù dé liàng lì ]");
-                btn3.setText("[ duó dé liáng lì ]");
-                btn4.setText("[ dù dé liáng lì ]");
+                textView1.setText("洛");
+                textView2.setText("阳");
+                textView3.setText("纸");
+                textView4.setText("贵");
+                btn1.setText("形容文学作品十分受人欢迎，广泛流传");
+                btn2.setText("形容物价暴涨");
+                btn3.setText("形容商品抢手，千金难求");
+                btn4.setText("形容战争时期家书难得");
                 btn1.setTextColor(getResources().getColor(R.color.black));
                 btn2.setTextColor(getResources().getColor(R.color.black));
                 btn3.setTextColor(getResources().getColor(R.color.black));
@@ -115,7 +115,6 @@ public class PronunceFragment extends Fragment {
                 textView.setText("");
             }
         });
-
         return view;
     }
 }
