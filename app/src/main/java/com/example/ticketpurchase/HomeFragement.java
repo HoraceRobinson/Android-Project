@@ -1,9 +1,15 @@
 package com.example.ticketpurchase;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.appcompat.widget.SearchView;
+
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,6 +30,9 @@ public class HomeFragement extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragement_home, container, false);
         initFragment();
+        SearchView searchView = view.findViewById(R.id.searchView);
+        EditText txtSearch = (searchView.findViewById(androidx.appcompat.R.id.search_src_text));
+        txtSearch.setTextColor(getActivity().getResources().getColor(R.color.rou));
         return view;
     }
 

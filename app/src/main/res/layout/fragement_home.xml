@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/home_background"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -31,6 +32,7 @@
                 android:layout_marginEnd="10dp"
                 app:searchIcon="@drawable/ic_search"
                 android:clickable="true"
+
                 android:queryHint="请输入搜索内容" />
         </LinearLayout>
 
