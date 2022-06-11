@@ -31,6 +31,7 @@ public class IdiomActivity extends AppCompatActivity {
             }
         });
 
-        
+        XUIAlphaImageView star = findViewById(R.id.star);
+        star.setImageDrawable(getDrawable(R.drawable.ic_star_fill));
     }
 }

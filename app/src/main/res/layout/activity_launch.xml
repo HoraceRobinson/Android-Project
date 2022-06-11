@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LaunchActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#AE6B69">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="开卷有益"
+            android:textSize="50sp"
+            android:gravity="center"
+            android:textColor="@color/rou"
+            android:fontFamily="@font/stxinwei"
+            android:lineSpacingExtra="20dp"
+            android:ems="1"/>
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text=""-->
+<!--            android:layout_marginStart="80dp"-->
+<!--            android:textSize="50sp"-->
+<!--            android:gravity="center"-->
+<!--            android:textColor="@color/rou"-->
+<!--            android:fontFamily="@font/stxinwei"-->
+<!--            android:ems="1"/>-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:layout_weight="3">
+            <com.xuexiang.xui.widget.alpha.XUIAlphaImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_orange"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="橙语"
+                android:textSize="40sp"
+                android:fontFamily="@font/fzytk"
+                android:gravity="center"
+                android:textColor="#935638"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="v 1.0.0"
+                android:textSize="15sp"
+                android:fontFamily="@font/fzytk"
+                android:gravity="center"
+                android:textColor="#935638"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="10dp"
+            android:textColor="@color/gray"
+            android:gravity="center"
+            android:text="Copyright © 2022 CHENGYU Corporation. All Right Reserved."/>
+
+    </LinearLayout>
+
+</LinearLayout>
