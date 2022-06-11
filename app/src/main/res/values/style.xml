@@ -44,4 +44,15 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="SuperButton.Primary.Login">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+        <item name="sCornersRadius">20dp</item>
+        <item name="sSelectorNormalColor">?attr/colorAccent</item>
+        <item name="sSelectorPressedColor">?attr/colorAccent</item>
+        <item name="android:textColor">@color/xui_config_color_white</item>
+    </style>
+
 </resources>

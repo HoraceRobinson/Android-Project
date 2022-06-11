@@ -59,7 +59,7 @@
                 android:textSize="40sp"
                 android:fontFamily="@font/fzytk"
                 android:gravity="center"
-                android:textColor="#935638"/>
+                android:textColor="@color/app_name"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"

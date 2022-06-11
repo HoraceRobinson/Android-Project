@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".LoginActivity">
+    tools:context=".RegisterActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="120dp"
@@ -85,34 +85,22 @@
 
         </FrameLayout>
 
-
-        <FrameLayout
+        <LinearLayout
+            android:id="@+id/sex"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.xuexiang.xui.widget.alpha.XUIAlphaTextView
-                android:id="@+id/tv_other_login"
-                style="@style/TextStyle.Explain"
-                android:layout_gravity="start"
-                android:paddingStart="10dp"
-                android:paddingTop="5dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="5dp"
-                android:text="新用户？点击注册"
-                android:textColor="@color/xui_config_color_primary_text" />
-
-            <com.xuexiang.xui.widget.alpha.XUIAlphaTextView
-                android:id="@+id/tv_forget_password"
-                style="@style/TextStyle.Explain"
-                android:layout_gravity="end"
-                android:paddingStart="10dp"
-                android:paddingTop="5dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="5dp"
-                android:text="忘记密码"
-                android:textColor="@color/xui_config_color_primary_text" />
-
-        </FrameLayout>
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="12dp">
+            <com.xuexiang.xui.widget.alpha.XUIAlphaImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_man"/>
+            <com.xuexiang.xui.widget.alpha.XUIAlphaImageView
+                android:layout_marginStart="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_woman"/>
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -121,7 +109,7 @@
         android:id="@+id/btn_login"
         android:layout_marginTop="16dp"
         app:sSelectorNormalColor="@color/brown"
-        android:text="登录" />
+        android:text="注册" />
 
     <LinearLayout
         android:layout_width="match_parent"
