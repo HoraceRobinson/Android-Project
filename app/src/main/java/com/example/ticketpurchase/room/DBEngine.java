@@ -10,6 +10,8 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.example.ticketpurchase.CollectedIdiomActivity;
 import com.example.ticketpurchase.IdiomContentActivity;
 import com.example.ticketpurchase.MainActivity;
@@ -18,7 +20,16 @@ import com.example.ticketpurchase.MyPopupWindow;
 import com.example.ticketpurchase.R;
 import com.xuexiang.xui.widget.popupwindow.popup.XUIPopup;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.ref.WeakReference;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class DBEngine {
@@ -118,9 +129,52 @@ public class DBEngine {
 
         @Override
         protected Idiom doInBackground(String ...idioms) {
-            Idiom idiom = dao.getTheIdiom(idioms[0]);
+            String arg = idioms[0];
+            Idiom idiom = dao.getTheIdiom(arg);
             if (idiom == null) {
 //                网络请求
+                InputStream inputStream = null;
+                InputStreamReader inputStreamReader = null;
+                BufferedReader bufferedReader = null;
+                String tmp;
+                StringBuilder stringBuilder = new StringBuilder();
+                try {
+                    URL url = new URL("http://47.113.102.111:8080/findIdiomByName/"+ URLEncoder.encode(arg, "UTF-8"));
+                    URLConnection connection = url.openConnection();
+                    connection.connect();
+                    inputStream = connection.getInputStream();
+                    inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+                    bufferedReader = new BufferedReader(inputStreamReader);
+                    while ((tmp = bufferedReader.readLine()) != null) {
+                        stringBuilder.append(tmp);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    if (inputStream != null) {
+                        try {
+                            inputStream.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    if (inputStreamReader != null) {
+                        try {
+                            inputStreamReader.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    if (bufferedReader != null) {
+                        try {
+                            bufferedReader.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+                JSONObject data = JSON.parseObject(stringBuilder.toString());
+                idiom = new Idiom(data.getString("idiom"), data.getString("pinyin"), data.getString("meaning"), data.getString("reference"), data.getString("example"));
             }
             else {
                 collected = true;
@@ -173,7 +227,49 @@ public class DBEngine {
             Idiom idiom = dao.getTheIdiom(idioms[0]);
             if (idiom == null) {
 //                网络请求获取idiom
-//                dao.insertIdioms(idiom);
+                InputStream inputStream = null;
+                InputStreamReader inputStreamReader = null;
+                BufferedReader bufferedReader = null;
+                String tmp;
+                StringBuilder stringBuilder = new StringBuilder();
+                try {
+                    URL url = new URL("http://47.113.102.111:8080/findIdiomByName/"+ URLEncoder.encode(idioms[0], "UTF-8"));
+                    URLConnection connection = url.openConnection();
+                    connection.connect();
+                    inputStream = connection.getInputStream();
+                    inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+                    bufferedReader = new BufferedReader(inputStreamReader);
+                    while ((tmp = bufferedReader.readLine()) != null) {
+                        stringBuilder.append(tmp);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    if (inputStream != null) {
+                        try {
+                            inputStream.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    if (inputStreamReader != null) {
+                        try {
+                            inputStreamReader.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    if (bufferedReader != null) {
+                        try {
+                            bufferedReader.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+                JSONObject data = JSON.parseObject(stringBuilder.toString());
+                Idiom res = new Idiom(data.getString("idiom"), data.getString("pinyin"), data.getString("meaning"), data.getString("reference"), data.getString("example"));
+                dao.insertIdioms(res);
             }
             else {
                 dao.deleteIdioms(idiom);
