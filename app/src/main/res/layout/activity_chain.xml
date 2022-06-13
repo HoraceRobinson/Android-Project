@@ -40,6 +40,77 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/time_layout"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_weight="1">
+            <com.xuexiang.xui.widget.progress.CircleProgressView
+                android:id="@+id/progressView_circle_small"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                app:cpv_progress_textVisibility="false"
+                app:cpv_animate_type="AccelerateDecelerateInterpolator"
+                app:cpv_circle_broken="false"
+                app:cpv_start_color="@color/app_name"
+                app:cpv_end_progress="0"
+                app:cpv_isFilled="true"
+                app:cpv_isTracked="true"
+                app:cpv_progress_duration="60000"
+                app:cpv_progress_textColor="#28AAFB"
+                app:cpv_progress_textSize="18sp"
+                app:cpv_end_color="#19AA6E5B"
+                app:cpv_start_progress="100"
+                app:cpv_track_color="#009C6B53"
+                app:cpv_track_width="4dp"
+                app:cpv_progress_width="8dp" />
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textSize="30sp"
+                android:textColor="@color/brown"
+                android:fontFamily="@font/stxingka"
+                android:text="60"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textSize="25sp"
+            android:fontFamily="@font/stxingka"
+            android:text="分数："/>
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:textSize="25sp"
+            android:fontFamily="@font/stxingka"
+            android:text="0"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/start_game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/stxingka"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        android:text="开始游戏"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
         android:layout_weight="8"
@@ -106,11 +177,15 @@
 
 
         <View
+            android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="10dp"
+            android:visibility="gone"
             android:background="@drawable/custom_line" />
 
+
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:visibility="gone"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -170,11 +245,9 @@
         </LinearLayout>
     </LinearLayout>
 
-
-
-
-
     <LinearLayout
+        android:id="@+id/input_text"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"

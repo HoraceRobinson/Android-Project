@@ -12,46 +12,39 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ticketpurchase.IdiomActivity;
 import com.example.ticketpurchase.R;
+import com.example.ticketpurchase.SearchActivity;
 import com.example.ticketpurchase.StarItemActivity;
 import com.example.ticketpurchase.room.DBEngine;
 import com.example.ticketpurchase.room.Idiom;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHolder> {
 
-    private List<Idiom> idioms;
-    private StarItemActivity context;
-    private DBEngine dbEngine;
+    private List<String> idioms;
+    private SearchActivity context;
 
-    public MyAdapter(List<Idiom> idioms, StarItemActivity context) {
+    public SearchAdapter(List<String> idioms, SearchActivity context) {
         this.idioms = idioms;
         this.context = context;
-        this.dbEngine = new DBEngine(context);
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = View.inflate(context, R.layout.recycle_idiom_item,null);
+        View view = View.inflate(context, R.layout.recycle_result_list,null);
         MyViewHolder holder = new MyViewHolder(view);
         holder.linearLayout.setOnClickListener(v -> {
             Intent intent = new Intent(context, IdiomActivity.class);
-            intent.putExtra("idiom_text", holder.content.getText());
+            intent.putExtra("idiom_text", holder.idiom.getText());
             context.startActivity(intent);
-        });
-        holder.button.setOnClickListener(v -> {
-            dbEngine.deleteTheIdiom((String) holder.content.getText());
-            dbEngine.getAllIdioms(context);
         });
         return holder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.content.setText(idioms.get(position).getIdiom());
-        holder.pinyin.setText(idioms.get(position).getPinyin());
-        holder.shiyi.setText(idioms.get(position).getMeaning());
+        holder.idiom.setText(idioms.get(position));
     }
 
     @Override
@@ -61,20 +54,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView content;
-        private TextView pinyin;
-        private TextView shiyi;
-        private Button button;
+        private TextView idiom;
         private LinearLayout linearLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            content = itemView.findViewById(R.id.idiom_content);
-            pinyin = itemView.findViewById(R.id.pinyin);
-            shiyi = itemView.findViewById(R.id.shiyi);
-            button = itemView.findViewById(R.id.remove_btn);
-            linearLayout = itemView.findViewById(R.id.linear_cont);
-
+            idiom = itemView.findViewById(R.id.idiom_result);
+            linearLayout = itemView.findViewById(R.id.layout_cont);
         }
     }
 }

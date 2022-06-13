@@ -39,6 +39,20 @@ public class GameFragment extends Fragment {
                 startActivity(new Intent(getActivity(), ChainActivity.class));
             }
         });
+        View reverseChain = view.findViewById(R.id.chain_reverse);
+        reverseChain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), ReverseChainActivity.class));
+            }
+        });
+        View findIdiom = view.findViewById(R.id.find_idiom);
+        findIdiom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), FindActivity.class));
+            }
+        });
         return view;
     }
 }

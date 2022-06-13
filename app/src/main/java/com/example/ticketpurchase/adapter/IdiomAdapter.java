@@ -8,12 +8,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ticketpurchase.IdiomActivity;
-import com.example.ticketpurchase.IdiomFragment;
 import com.example.ticketpurchase.R;
 
 import org.json.JSONArray;

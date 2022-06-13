@@ -16,7 +16,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.xuexiang.xui.widget.textview.supertextview.SuperTextView;
 
-public class UserFragement extends Fragment {
+public class UserFragment extends Fragment {
 
     @Nullable
     @Override

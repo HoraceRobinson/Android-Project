@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 //        startActivity(new Intent(this, HomeActivity.class));
 
         if(savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().replace(R.id.frameContainer, new HomeFragement()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frameContainer, new HomeFragment()).commit();
         }
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
                 Fragment fragment = null;
                 switch (item.getItemId()){
                     case R.id.home:
-                        fragment = new HomeFragement();
+                        fragment = new HomeFragment();
                         break;
                     case R.id.user:
-                        fragment = new UserFragement();
+                        fragment = new UserFragment();
                         break;
                     case R.id.function:
                         fragment = new FunctionFragment();

@@ -91,7 +91,7 @@
             android:layout_height="wrap_content">
 
             <com.xuexiang.xui.widget.alpha.XUIAlphaTextView
-                android:id="@+id/tv_other_login"
+                android:id="@+id/tv_register"
                 style="@style/TextStyle.Explain"
                 android:layout_gravity="start"
                 android:paddingStart="10dp"

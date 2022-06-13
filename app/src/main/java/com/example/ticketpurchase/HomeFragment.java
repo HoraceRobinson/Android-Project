@@ -1,5 +1,6 @@
 package com.example.ticketpurchase;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.TypedValue;
@@ -10,6 +11,7 @@ import androidx.appcompat.widget.SearchView;
 
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,7 +23,7 @@ import com.xuexiang.xui.widget.banner.widget.banner.SimpleImageBanner;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragement extends Fragment {
+public class HomeFragment extends Fragment {
 
     public View view;
 
@@ -33,6 +35,23 @@ public class HomeFragement extends Fragment {
         SearchView searchView = view.findViewById(R.id.searchView);
         EditText txtSearch = (searchView.findViewById(androidx.appcompat.R.id.search_src_text));
         txtSearch.setTextColor(getActivity().getResources().getColor(R.color.rou));
+        searchView.setSubmitButtonEnabled(true);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                // query result
+                Intent intent = new Intent(getContext(), SearchActivity.class);
+                intent.putExtra("search_key", txtSearch.getText().toString());
+                startActivity(intent);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // ambiguous query
+                return false;
+            }
+        });
         return view;
     }
 
