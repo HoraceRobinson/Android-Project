@@ -35,6 +35,50 @@
     </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <com.xuexiang.xui.widget.progress.HorizontalProgressView
+                android:id="@+id/line_progress"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                app:hpv_end_color="@color/brown"
+                app:hpv_end_progress="0"
+                app:hpv_isTracked="true"
+                app:hpv_progress_duration="60000"
+                app:hpv_progress_textColor="#696969"
+                app:hpv_progress_textVisibility="false"
+                app:hpv_start_color="@color/app_name"
+                app:hpv_track_color="#f4f4f4"
+                app:hpv_track_width="8dp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textSize="25sp"
+            android:fontFamily="@font/stxingka"
+            android:text="分数："/>
+        <TextView
+            android:layout_gravity="end"
+            android:id="@+id/score"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textSize="30sp"
+            android:textColor="@color/brown"
+            android:fontFamily="@font/stxingka"
+            android:text="0"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/result_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,11 +90,23 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/text_grid"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:orientation="vertical">
         <include layout="@layout/layout_choose_text" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/start_game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/stxingka"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        android:text="开始游戏"/>
 
 </LinearLayout>

@@ -97,6 +97,7 @@ public class ChainActivity extends AppCompatActivity {
                 LinearLayout timeLayout = findViewById(R.id.time_layout);
                 timeLayout.setVisibility(View.VISIBLE);
                 start.setVisibility(View.GONE);
+                time.setText("0");
 
                 CircleProgressView progressView = findViewById(R.id.progressView_circle_small);
                 progressView.startProgressAnimation();
@@ -105,10 +106,14 @@ public class ChainActivity extends AppCompatActivity {
                     public void handleMessage(@NonNull Message msg) {
                         super.handleMessage(msg);
                         if(msg.what >= 0){
-//                    System.out.println(msg.what);
                             time.setText("" + msg.what);
                         }
                         else{
+                            layout2.setVisibility(View.GONE);
+                            input.setVisibility(View.GONE);
+                            divider.setVisibility(View.GONE);
+                            start.setText("再来一次");
+                            start.setVisibility(View.VISIBLE);
                             timer.cancel();
                         }
                     }
@@ -202,14 +207,15 @@ public class ChainActivity extends AppCompatActivity {
     public void chain(View view) throws InterruptedException {
         String input = editText.getText().toString();
         editText.setText("");
-        if (input.charAt(0) != textView4.getText().charAt(0)) {
-            Toast.makeText(this,"输入成语不符合要求",Toast.LENGTH_SHORT).show();
+        if(!input.equals("")){
+            if (input.charAt(0) != textView4.getText().charAt(0)) {
+                Toast.makeText(this,"输入成语不符合要求",Toast.LENGTH_SHORT).show();
+            }
+            else {
+                IdiomExistTask task = new IdiomExistTask(this);
+                task.execute(input);
+            }
         }
-        else {
-            IdiomExistTask task = new IdiomExistTask(this);
-            task.execute(input);
-        }
-
     }
 
     private static class IdiomExistTask extends AsyncTask<String, Void, String> {
