@@ -57,6 +57,7 @@ public class FindActivity extends AppCompatActivity {
             public void onClick(View view) {
                 textGrid.setVisibility(View.VISIBLE);
                 start.setVisibility(View.GONE);
+                scoreText.setText("0");
                 setContent();
                 HorizontalProgressView progressView = findViewById(R.id.line_progress);
                 progressView.startProgressAnimation();
@@ -164,6 +165,7 @@ public class FindActivity extends AppCompatActivity {
         inputs.add(findViewById(R.id.text4));
         result = findViewById(R.id.result_layout);
         scoreText = findViewById(R.id.score);
+        scoreText.setText("0");
         textGrid = findViewById(R.id.text_grid);
         start = findViewById(R.id.start_game);
     }
@@ -175,7 +177,11 @@ public class FindActivity extends AppCompatActivity {
         for(int i = 0; i < 4; i++){
             inputs.get(i).setText("");
         }
-        scoreText.setText("0");
+//        scoreText.setText("0");
+
+        for (TextView textView : textViews) {
+            textView.setTextColor(getColor(R.color.font_black));
+        }
     }
 
     private static class IdiomChooseTask extends AsyncTask<Void, Void, String> {

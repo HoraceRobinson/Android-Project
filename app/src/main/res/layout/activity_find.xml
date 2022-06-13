@@ -55,6 +55,7 @@
                 app:hpv_progress_textColor="#696969"
                 app:hpv_progress_textVisibility="false"
                 app:hpv_start_color="@color/app_name"
+                app:hpv_start_progress="100"
                 app:hpv_track_color="#f4f4f4"
                 app:hpv_track_width="8dp" />
         </LinearLayout>
