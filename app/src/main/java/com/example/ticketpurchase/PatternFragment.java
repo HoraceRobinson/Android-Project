@@ -172,15 +172,14 @@ public class PatternFragment extends Fragment {
                 Log.e("PatternFragment","Activity弱引用创建失败或Activity已经结束");
                 return;
             }
-            JSONObject data = JSON.parseObject(str,JSONObject.class);
             ViewPager viewpager = activity.findViewById(R.id.view_pager1);
             PatternFragment fragment = (PatternFragment) viewpager.getAdapter().instantiateItem(viewpager, 0);
 
-            fragment.xingIdiom = (XingIdiom) data.get("idiom");
-            String content = data.getString("content");
-            List<String> list = JSONObject.parseArray(content,String.class);
+//            fragment.xingIdiom = JSON.parseObject(str.getString("idiom"),XingIdiom.class);
+//            String content = str.getString("content");
+//            List<String> list = JSONObject.parseArray(content,String.class);
 
-            System.out.println(list);
+            System.out.println(str);
         }
     }
 
