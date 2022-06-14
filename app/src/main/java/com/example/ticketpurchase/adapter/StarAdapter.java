@@ -10,9 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ticketpurchase.IdiomActivity;
+import com.example.ticketpurchase.idiom.IdiomActivity;
 import com.example.ticketpurchase.R;
-import com.example.ticketpurchase.StarItemActivity;
+import com.example.ticketpurchase.idiom.StarItemActivity;
 import com.example.ticketpurchase.room.DBEngine;
 import com.example.ticketpurchase.room.Idiom;
 

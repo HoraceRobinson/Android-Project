@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ticketpurchase.IdiomActivity;
+import com.example.ticketpurchase.idiom.IdiomActivity;
 import com.example.ticketpurchase.R;
 
 import org.json.JSONArray;

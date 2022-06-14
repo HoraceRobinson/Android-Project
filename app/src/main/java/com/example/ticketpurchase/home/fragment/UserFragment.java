@@ -1,7 +1,9 @@
-package com.example.ticketpurchase;
+package com.example.ticketpurchase.home.fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,11 +11,10 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
+import com.example.ticketpurchase.R;
+import com.example.ticketpurchase.idiom.StarItemActivity;
 import com.xuexiang.xui.widget.textview.supertextview.SuperTextView;
 
 public class UserFragment extends Fragment {
@@ -30,6 +31,9 @@ public class UserFragment extends Fragment {
                 startActivity(new Intent(getActivity(), StarItemActivity.class));
             }
         });
+        SuperTextView username = view.findViewById(R.id.username);
+        SharedPreferences sp = getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
+        username.setCenterString(sp.getString("username", null));
         return view;
     }
 }

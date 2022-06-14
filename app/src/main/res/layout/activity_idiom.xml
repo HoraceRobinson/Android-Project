@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/villege_ink"
-    tools:context=".IdiomActivity">
+    tools:context=".idiom.IdiomActivity">
 
 
     <!--    <com.xuexiang.xui.widget.actionbar.TitleBar-->

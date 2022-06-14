@@ -67,7 +67,25 @@
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/layout/reference_text.xml" value="0.20820863616930313" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/layout/text_line.xml" value="0.20820863616930313" />
         <entry key="..\:/AndroidStudioProjects/TicketPurchase/app/src/main/res/menu/menu_navigation_bottom.xml" value="0.20820863616930313" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/drawable/background_green.xml" value="0.1235" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/drawable/background_red.xml" value="0.1235" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/drawable/border_edittext.xml" value="0.147" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/drawable/ic_arrow_left.xml" value="0.1235" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/drawable/ic_baseline_games_24.xml" value="0.147" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/drawable/ic_man.xml" value="0.1235" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/drawable/ic_man_fill.xml" value="0.1235" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/drawable/ic_orange.xml" value="0.1" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/drawable/ic_woman_fill.xml" value="0.1235" />
         <entry key="..\:/android/master/Android-Project/app/src/main/res/layout/activity_find.xml" value="0.22" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/layout/activity_register.xml" value="0.175" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/layout/activity_reverse_chain.xml" value="0.175" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/layout/activity_star_item.xml" value="0.175" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/layout/button_list.xml" value="0.175" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/layout/fragement_user.xml" value="0.175" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/layout/fragment_function.xml" value="0.175" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/layout/fragment_star_idiom.xml" value="0.175" />
+        <entry key="..\:/android/master/Android-Project/app/src/main/res/menu/menu_navigation_bottom.xml" value="0.175" />
       </map>
     </option>
   </component>

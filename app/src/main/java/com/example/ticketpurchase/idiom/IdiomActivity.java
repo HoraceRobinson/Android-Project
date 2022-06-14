@@ -1,4 +1,4 @@
-package com.example.ticketpurchase;
+package com.example.ticketpurchase.idiom;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.example.ticketpurchase.R;
 import com.example.ticketpurchase.extendview.MyPopupWindow;
 import com.example.ticketpurchase.room.DBEngine;
 import com.example.ticketpurchase.room.Idiom;

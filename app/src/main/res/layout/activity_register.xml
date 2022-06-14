@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".RegisterActivity">
+    tools:context=".init.RegisterActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="120dp"
@@ -43,15 +43,15 @@
                 app:srcCompat="@drawable/ic_login_user" />
 
             <com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText
-                android:id="@+id/et_phone_number"
+                android:id="@+id/et_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="36dp"
                 android:hint="用户名"
-                android:inputType="number"
                 app:met_clearButton="true"
                 app:met_errorMessage="无效的用户名"
                 app:met_floatingLabel="normal"
+                app:met_minCharacters="1"
                 app:met_floatingLabelText="用户名" />
         </FrameLayout>
 
@@ -70,17 +70,17 @@
                 app:srcCompat="@drawable/ic_password" />
 
             <com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText
-                android:id="@+id/et_verify_code"
+                android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="36dp"
                 android:hint="密码(8-15位)"
-                android:inputType="number"
                 app:met_clearButton="false"
                 app:met_errorMessage="密码错误或不符合规范"
                 app:met_floatingLabel="normal"
                 app:met_floatingLabelText="密码"
-                app:met_maxCharacters="4"
+                app:met_minCharacters="8"
+                app:met_maxCharacters="15"
                 app:met_regexp="^(?:(?=.*[a-zA-Z])(?=.*[0-9])).{8,15}$" />
 
         </FrameLayout>
@@ -92,10 +92,12 @@
             android:gravity="center"
             android:layout_marginTop="12dp">
             <com.xuexiang.xui.widget.alpha.XUIAlphaImageView
+                android:id="@+id/man"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_man"/>
             <com.xuexiang.xui.widget.alpha.XUIAlphaImageView
+                android:id="@+id/woman"
                 android:layout_marginStart="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -106,7 +108,7 @@
 
     <com.xuexiang.xui.widget.textview.supertextview.SuperButton
         style="@style/SuperButton.Primary.Login"
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_register"
         android:layout_marginTop="16dp"
         app:sSelectorNormalColor="@color/brown"
         android:text="注册" />

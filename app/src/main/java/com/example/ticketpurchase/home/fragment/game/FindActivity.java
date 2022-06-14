@@ -1,4 +1,4 @@
-package com.example.ticketpurchase;
+package com.example.ticketpurchase.home.fragment.game;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,11 +12,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.example.ticketpurchase.R;
 import com.xuexiang.xui.widget.alpha.XUIAlphaImageView;
-import com.xuexiang.xui.widget.progress.CircleProgressView;
 import com.xuexiang.xui.widget.progress.HorizontalProgressView;
 
 import java.io.BufferedReader;
@@ -79,7 +77,7 @@ public class FindActivity extends AppCompatActivity {
 
                 timer = new Timer();
                 timer.schedule(new TimerTask() {
-                    int i = 60;
+                    int i = 120;
                     @Override
                     public void run() {
                         Message msg = new Message();

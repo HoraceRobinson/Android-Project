@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/background_ink1"
-    tools:context=".ChainActivity">
+    tools:context=".home.fragment.game.ChainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"

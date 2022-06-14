@@ -47,6 +47,9 @@ public class YiIdiom {
         this.wrong3 = wrong3;
     }
 
+    public YiIdiom() {
+    }
+
     public YiIdiom(String idiom, String correct, String wrong1, String wrong2, String wrong3) {
         this.idiom = idiom;
         this.correct = correct;

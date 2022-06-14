@@ -13,7 +13,9 @@
     <color name="rou">#DDDDCC</color>
     <color name="theme_white">#F7F7EF</color>
     <color name="font_black">#383030</color>
-    <color name="green">#309146</color>
+    <color name="green">#72309146</color>
     <color name="app_name">#935638</color>
     <color name="transform">#00000000</color>
+    <color name="man">#47BBEF</color>
+    <color name="woman">#EC6291</color>
 </resources>

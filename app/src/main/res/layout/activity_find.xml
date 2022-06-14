@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/linear_background"
-    tools:context=".FindActivity">
+    tools:context=".home.fragment.game.FindActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -49,13 +49,13 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="10dp"
                 app:hpv_end_color="@color/brown"
-                app:hpv_end_progress="0"
+                app:hpv_end_progress="100"
                 app:hpv_isTracked="true"
-                app:hpv_progress_duration="60000"
+                app:hpv_progress_duration="120000"
                 app:hpv_progress_textColor="#696969"
                 app:hpv_progress_textVisibility="false"
                 app:hpv_start_color="@color/app_name"
-                app:hpv_start_progress="100"
+                app:hpv_start_progress="0"
                 app:hpv_track_color="#f4f4f4"
                 app:hpv_track_width="8dp" />
         </LinearLayout>

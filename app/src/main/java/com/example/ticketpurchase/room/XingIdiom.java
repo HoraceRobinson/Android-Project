@@ -13,6 +13,9 @@ public class XingIdiom {
         this.wrong3 = wrong3;
     }
 
+    public XingIdiom() {
+    }
+
     public String getCorrect() {
         return correct;
     }
@@ -39,6 +42,16 @@ public class XingIdiom {
 
     public String getWrong3() {
         return wrong3;
+    }
+
+    @Override
+    public String toString() {
+        return "XingIdiom{" +
+                "correct='" + correct + '\'' +
+                ", wrong1='" + wrong1 + '\'' +
+                ", wrong2='" + wrong2 + '\'' +
+                ", wrong3='" + wrong3 + '\'' +
+                '}';
     }
 
     public void setWrong3(String wrong3) {

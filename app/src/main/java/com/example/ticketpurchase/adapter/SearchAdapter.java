@@ -3,19 +3,15 @@ package com.example.ticketpurchase.adapter;
 import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ticketpurchase.IdiomActivity;
+import com.example.ticketpurchase.idiom.IdiomActivity;
 import com.example.ticketpurchase.R;
-import com.example.ticketpurchase.SearchActivity;
-import com.example.ticketpurchase.StarItemActivity;
-import com.example.ticketpurchase.room.DBEngine;
-import com.example.ticketpurchase.room.Idiom;
+import com.example.ticketpurchase.home.activity.SearchActivity;
 
 import java.util.List;
 

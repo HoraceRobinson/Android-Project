@@ -1,4 +1,4 @@
-package com.example.ticketpurchase;
+package com.example.ticketpurchase.home.fragment;
 
 import android.os.Bundle;
 
@@ -13,6 +13,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.ticketpurchase.home.fragment.function.MeaningFragment;
+import com.example.ticketpurchase.home.fragment.function.PatternFragment;
+import com.example.ticketpurchase.home.fragment.function.PronounceFragment;
+import com.example.ticketpurchase.R;
 import com.google.android.material.tabs.TabLayout;
 
 /**
@@ -82,12 +86,13 @@ public class FunctionFragment extends Fragment {
         tabList[0] = "形";
         tabList[1] = "音";
         tabList[2] = "义";
-        fragments[0] = PatternFragment.newInstance();
-        fragments[1] = PronunceFragment.newInstance();
-        fragments[2] = MeaningFragment.newInstance();
+        fragments[0] = new PatternFragment();
+        fragments[1] = new PronounceFragment();
+        fragments[2] = new MeaningFragment();
         MyAdapter myAdapter = new MyAdapter(getChildFragmentManager());
         viewPager.setAdapter(myAdapter);
-
+//        预加载三个fragment
+        viewPager.setOffscreenPageLimit(3);
         tabLayout.setupWithViewPager(viewPager);
     }
 
@@ -96,6 +101,7 @@ public class FunctionFragment extends Fragment {
         public MyAdapter(FragmentManager fragmentManager){
             super(fragmentManager);
         }
+
         @NonNull
         @Override
         public Fragment getItem(int position) {
@@ -112,5 +118,7 @@ public class FunctionFragment extends Fragment {
         public CharSequence getPageTitle(int position) {
             return tabList[position];
         }
+
+
     }
 }

@@ -1,4 +1,4 @@
-package com.example.ticketpurchase;
+package com.example.ticketpurchase.home.fragment.game;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.example.ticketpurchase.R;
 import com.example.ticketpurchase.room.DBEngine;
 import com.xuexiang.xui.widget.alpha.XUIAlphaImageView;
 import com.xuexiang.xui.widget.popupwindow.popup.XUIPopup;
@@ -35,7 +36,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class ReverseChainActivity extends AppCompatActivity {
+public class ChainActivity extends AppCompatActivity {
 
     Button buttonView;
     TextView textView1;
@@ -74,7 +75,7 @@ public class ReverseChainActivity extends AppCompatActivity {
         time = findViewById(R.id.time);
         myPopup = new XUIPopup(this);
         dbEngine = new DBEngine(this);
-        ReverseChainActivity.IdiomInitializeTask task = new ReverseChainActivity.IdiomInitializeTask(this);
+        IdiomInitializeTask task = new IdiomInitializeTask(this);
         task.execute();
         XUIAlphaImageView imageView = findViewById(R.id.back_func);
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +98,7 @@ public class ReverseChainActivity extends AppCompatActivity {
                 LinearLayout timeLayout = findViewById(R.id.time_layout);
                 timeLayout.setVisibility(View.VISIBLE);
                 start.setVisibility(View.GONE);
+                time.setText("0");
 
                 CircleProgressView progressView = findViewById(R.id.progressView_circle_small);
                 progressView.startProgressAnimation();
@@ -105,10 +107,14 @@ public class ReverseChainActivity extends AppCompatActivity {
                     public void handleMessage(@NonNull Message msg) {
                         super.handleMessage(msg);
                         if(msg.what >= 0){
-//                    System.out.println(msg.what);
                             time.setText("" + msg.what);
                         }
                         else{
+                            layout2.setVisibility(View.GONE);
+                            input.setVisibility(View.GONE);
+                            divider.setVisibility(View.GONE);
+                            start.setText("再来一次");
+                            start.setVisibility(View.VISIBLE);
                             timer.cancel();
                         }
                     }
@@ -132,9 +138,9 @@ public class ReverseChainActivity extends AppCompatActivity {
     private static class IdiomInitializeTask extends AsyncTask<Void, Void, String> {
 
         public static final String URL = "http://47.113.102.111:8080/getOneRandomIdiom";
-        private final WeakReference<ReverseChainActivity> activityReference;
+        private final WeakReference <ChainActivity> activityReference;
 
-        public IdiomInitializeTask  (ReverseChainActivity context) {
+        public IdiomInitializeTask  (ChainActivity context) {
             activityReference = new WeakReference<>(context);
         }
 
@@ -185,7 +191,7 @@ public class ReverseChainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String str) {
-            ReverseChainActivity activity = activityReference.get();
+            ChainActivity activity = activityReference.get();
             if (activity == null || activity.isFinishing()) {
                 Log.e("ChainActivity","Activity弱引用创建失败或Activity已经结束");
                 return;
@@ -202,22 +208,23 @@ public class ReverseChainActivity extends AppCompatActivity {
     public void chain(View view) throws InterruptedException {
         String input = editText.getText().toString();
         editText.setText("");
-        if (input.charAt(input.length() - 1) != textView1.getText().charAt(0)) {
-            Toast.makeText(this,"输入成语不符合要求",Toast.LENGTH_SHORT).show();
+        if(!input.equals("")){
+            if (input.charAt(0) != textView4.getText().charAt(0)) {
+                Toast.makeText(this,"输入成语不符合要求",Toast.LENGTH_SHORT).show();
+            }
+            else {
+                IdiomExistTask task = new IdiomExistTask(this);
+                task.execute(input);
+            }
         }
-        else {
-            ReverseChainActivity.IdiomExistTask task = new ReverseChainActivity.IdiomExistTask(this);
-            task.execute(input);
-        }
-
     }
 
     private static class IdiomExistTask extends AsyncTask<String, Void, String> {
 
         public static final String URL = "http://47.113.102.111:8080/findIdiomByName/";
-        private final WeakReference <ReverseChainActivity> activityReference;
+        private final WeakReference <ChainActivity> activityReference;
 
-        public IdiomExistTask  (ReverseChainActivity context) {
+        public IdiomExistTask  (ChainActivity context) {
             activityReference = new WeakReference<>(context);
         }
 
@@ -268,9 +275,9 @@ public class ReverseChainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String str) {
-            ReverseChainActivity activity = activityReference.get();
+        ChainActivity activity = activityReference.get();
             if (activity == null || activity.isFinishing()) {
-                Log.e("ReverseChainActivity","Activity弱引用创建失败或Activity已经结束");
+                Log.e("ChainActivity","Activity弱引用创建失败或Activity已经结束");
                 return;
             }
             JSONObject data = JSON.parseObject(str);
@@ -285,18 +292,18 @@ public class ReverseChainActivity extends AppCompatActivity {
                 activity.textView8.setText(((Character) name.charAt(3)).toString());
                 activity.cnt++;
                 activity.score.setText("" + activity.cnt);
-                ReverseChainActivity.ReverseIdiomChainTask task = new ReverseChainActivity.ReverseIdiomChainTask(activity);
-                task.execute(activity.textView5.getText().toString());
+                IdiomChainTask task = new IdiomChainTask(activity);
+                task.execute(activity.textView8.getText().toString());
             }
         }
     }
 
-    private static class ReverseIdiomChainTask extends AsyncTask<String, Void, String> {
+    private static class IdiomChainTask extends AsyncTask<String, Void, String> {
 
-        public static final String URL = "http://47.113.102.111:8080/findReverseIdiomChain/";
-        private final WeakReference <ReverseChainActivity> activityReference;
+        public static final String URL = "http://47.113.102.111:8080/findIdiomChain/";
+        private final WeakReference <ChainActivity> activityReference;
 
-        public ReverseIdiomChainTask (ReverseChainActivity context) {
+        public IdiomChainTask (ChainActivity context) {
             activityReference = new WeakReference<>(context);
         }
 
@@ -347,9 +354,9 @@ public class ReverseChainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String str) {
-            ReverseChainActivity activity = activityReference.get();
+        ChainActivity activity = activityReference.get();
             if (activity == null || activity.isFinishing()) {
-                Log.e("ReverseChainActivity","Activity弱引用创建失败或Activity已经结束");
+                Log.e("ChainActivity","Activity弱引用创建失败或Activity已经结束");
                 return;
             }
 //            JSONObject data = JSON.parseObject(str);
@@ -358,6 +365,8 @@ public class ReverseChainActivity extends AppCompatActivity {
                 Toast.makeText(activity,"数据库被你打败了",Toast.LENGTH_SHORT).show();
             }
             else {
+                System.out.println(str);
+//                String name = data.toString();
                 String name = str;
                 LinearLayout layout = activity.findViewById(R.id.layout1);
                 activity.textView1.setText(((Character) name.charAt(0)).toString());
@@ -373,7 +382,7 @@ public class ReverseChainActivity extends AppCompatActivity {
 
     public void popup(View view) {
         String str = textView1.getText().toString()+textView2.getText().toString()+textView3.getText().toString()+textView4.getText().toString();
-        dbEngine.popupReverseIdiom(str, this);
+        dbEngine.popupIdiom(str, this);
     }
 
     public void collect(View view) {
@@ -381,7 +390,7 @@ public class ReverseChainActivity extends AppCompatActivity {
         if (myPopup.isShowing()) {
             String str = textView1.getText().toString()+textView2.getText().toString()+textView3.getText().toString()+textView4.getText().toString();
             myPopup.dismiss();
-            dbEngine.collectReverseIdiom(str,this);
+            dbEngine.collectIdiom(str,this);
         }
     }
 }

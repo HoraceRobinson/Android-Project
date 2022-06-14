@@ -7,6 +7,9 @@ public class YinIdiom {
     private String wrong2;
     private String wrong3;
 
+    public YinIdiom() {
+    }
+
     public String getIdiom() {
         return idiom;
     }

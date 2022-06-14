@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/ink"
-    tools:context=".PatternFragment">
+    tools:context=".home.fragment.function.PatternFragment">
 
 <!--    <include layout="@layout/text_line"-->
 <!--        android:layout_width="match_parent"-->

@@ -3,7 +3,6 @@ package com.example.ticketpurchase.room;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,11 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.example.ticketpurchase.ChainActivity;
-import com.example.ticketpurchase.IdiomActivity;
+import com.example.ticketpurchase.home.fragment.game.ChainActivity;
+import com.example.ticketpurchase.idiom.IdiomActivity;
 import com.example.ticketpurchase.R;
-import com.example.ticketpurchase.ReverseChainActivity;
-import com.example.ticketpurchase.StarItemActivity;
+import com.example.ticketpurchase.home.fragment.game.ReverseChainActivity;
+import com.example.ticketpurchase.idiom.StarItemActivity;
 import com.example.ticketpurchase.adapter.StarAdapter;
 import com.example.ticketpurchase.extendview.MyPopupWindow;
 import com.xuexiang.xui.widget.popupwindow.popup.XUIPopup;
@@ -175,7 +174,7 @@ public class DBEngine {
                 if (data == null) {
                     return null;
                 }
-                idiom = new Idiom(data.getString("idiom"), data.getString("pinyin"), data.getString("meaning"), data.getString("reference"), data.getString("example"));
+                idiom = data.toJavaObject(Idiom.class);
             }
             else {
                 collected = true;
@@ -274,9 +273,8 @@ public class DBEngine {
                         }
                     }
                 }
-                JSONObject data = JSON.parseObject(stringBuilder.toString());
-                Idiom res = new Idiom(data.getString("idiom"), data.getString("pinyin"), data.getString("meaning"), data.getString("reference"), data.getString("example"));
-                dao.insertIdioms(res);
+                Idiom result = JSON.parseObject(stringBuilder.toString(),Idiom.class);
+                dao.insertIdioms(result);
             }
             else {
                 dao.deleteIdioms(idiom);
@@ -368,7 +366,7 @@ public class DBEngine {
                 if (data == null) {
                     return null;
                 }
-                idiom = new Idiom(data.getString("idiom"), data.getString("pinyin"), data.getString("meaning"), data.getString("reference"), data.getString("example"));
+               idiom = data.toJavaObject(Idiom.class);
             }
             else {
                 collected = true;
@@ -467,9 +465,8 @@ public class DBEngine {
                         }
                     }
                 }
-                JSONObject data = JSON.parseObject(stringBuilder.toString());
-                Idiom res = new Idiom(data.getString("idiom"), data.getString("pinyin"), data.getString("meaning"), data.getString("reference"), data.getString("example"));
-                dao.insertIdioms(res);
+                idiom = JSON.parseObject(stringBuilder.toString(),Idiom.class);
+                dao.insertIdioms(idiom);
             }
             else {
                 dao.deleteIdioms(idiom);
@@ -602,9 +599,7 @@ public class DBEngine {
                     }
                 }
             }
-            JSONObject data = JSON.parseObject(stringBuilder.toString());
-            Idiom idiom = new Idiom(data.getString("idiom"), data.getString("pinyin"), data.getString("meaning"), data.getString("reference"), data.getString("example"));
-            return idiom;
+            return JSON.parseObject(stringBuilder.toString(),Idiom.class);
         }
 
         @Override

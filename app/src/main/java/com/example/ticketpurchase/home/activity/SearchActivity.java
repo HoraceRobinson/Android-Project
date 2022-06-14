@@ -1,4 +1,4 @@
-package com.example.ticketpurchase;
+package com.example.ticketpurchase.home.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,8 +11,8 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
+import com.example.ticketpurchase.R;
 import com.example.ticketpurchase.adapter.SearchAdapter;
-import com.example.ticketpurchase.adapter.StarAdapter;
 
 import java.io.BufferedReader;
 import java.io.IOException;

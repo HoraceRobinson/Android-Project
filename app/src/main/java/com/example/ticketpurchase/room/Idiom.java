@@ -15,6 +15,10 @@ public class Idiom {
     private String reference;
     private String example;
 
+    public Idiom() {
+        idiom = "";
+    }
+
     public Idiom(@NonNull String idiom, String pinyin, String meaning, String reference, String example) {
         this.idiom = idiom;
         this.pinyin = pinyin;

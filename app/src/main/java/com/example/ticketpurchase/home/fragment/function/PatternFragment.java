@@ -1,4 +1,4 @@
-package com.example.ticketpurchase;
+package com.example.ticketpurchase.home.fragment.function;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,12 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.example.ticketpurchase.R;
+import com.example.ticketpurchase.home.activity.MainActivity;
 import com.example.ticketpurchase.room.XingIdiom;
 
 import java.io.BufferedReader;
@@ -36,6 +37,7 @@ public class PatternFragment extends Fragment {
 
     List<Button> btnList = new ArrayList<>();
     public XingIdiom xingIdiom;
+    public TextView textView;
 
     public PatternFragment() {
         // Required empty public constructor
@@ -59,31 +61,8 @@ public class PatternFragment extends Fragment {
 
         init(view);
         setContent();
-        TextView textView = view.findViewById(R.id.text_explain);
+
         LinearLayout linearLayout = view.findViewById(R.id.next_btn);
-
-        for(Button btn : btnList){
-            btn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if(btn.getText() == xingIdiom.getCorrect()){
-                        btn.setBackground(getResources().getDrawable(R.drawable.background_green));
-                        btn.setTextColor(getResources().getColor(R.color.white));
-                        if(textView.getText() == ""){
-                            textView.setText("回答正确！");
-                        }
-                    }
-                    else{
-                        btn.setBackground(getResources().getDrawable(R.drawable.background_red));
-                        btn.setTextColor(getResources().getColor(R.color.white));
-                        if(textView.getText() == ""){
-                            textView.setText("回答错误！");
-                        }
-                    }
-                }
-            });
-        }
-
 
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +79,7 @@ public class PatternFragment extends Fragment {
         btnList.add(view.findViewById(R.id.btn2));
         btnList.add(view.findViewById(R.id.btn3));
         btnList.add(view.findViewById(R.id.btn4));
+        textView = view.findViewById(R.id.text_explain);
         for (Button btn: btnList) {
             btn.setTextColor(getResources().getColor(R.color.black));
             btn.setBackground(getResources().getDrawable(R.drawable.white_background));
@@ -107,6 +87,11 @@ public class PatternFragment extends Fragment {
     }
 
     public void setContent(){
+        for (Button btn: btnList) {
+            btn.setTextColor(getResources().getColor(R.color.black));
+            btn.setBackground(getResources().getDrawable(R.drawable.white_background));
+        }
+        textView.setText("");
         PatternTask task = new PatternTask((MainActivity) getActivity());
         task.execute();
     }
@@ -175,11 +160,33 @@ public class PatternFragment extends Fragment {
             ViewPager viewpager = activity.findViewById(R.id.view_pager1);
             PatternFragment fragment = (PatternFragment) viewpager.getAdapter().instantiateItem(viewpager, 0);
 
-//            fragment.xingIdiom = JSON.parseObject(str.getString("idiom"),XingIdiom.class);
-//            String content = str.getString("content");
-//            List<String> list = JSONObject.parseArray(content,String.class);
-
-            System.out.println(str);
+            JSONObject data = JSON.parseObject(str);
+            XingIdiom xingIdiom = JSON.parseObject(data.getString("idiom"),XingIdiom.class);
+            List<String> list = JSONObject.parseArray(data.getString("content"),String.class);
+            for (int i = 0; i < 4; i++) {
+                fragment.btnList.get(i).setText(list.get(i));
+            }
+            for(Button btn : fragment.btnList){
+                btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if(btn.getText().toString().equals(xingIdiom.getCorrect())){
+                            btn.setBackground(activity.getResources().getDrawable(R.drawable.background_green));
+                            btn.setTextColor(activity.getResources().getColor(R.color.white));
+                            if(fragment.textView.getText() == ""){
+                                fragment.textView.setText("回答正确！");
+                            }
+                        }
+                        else{
+                            btn.setBackground(activity.getResources().getDrawable(R.drawable.background_red));
+                            btn.setTextColor(activity.getResources().getColor(R.color.white));
+                            if(fragment.textView.getText() == ""){
+                                fragment.textView.setText("回答错误！");
+                            }
+                        }
+                    }
+                });
+            }
         }
     }
 

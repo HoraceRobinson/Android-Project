@@ -1,4 +1,4 @@
-package com.example.ticketpurchase;
+package com.example.ticketpurchase.idiom;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.ticketpurchase.R;
 import com.example.ticketpurchase.adapter.IdiomAdapter;
 import com.example.ticketpurchase.room.DBEngine;
 import com.example.ticketpurchase.room.Idiom;
